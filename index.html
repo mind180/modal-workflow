@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="WorkflowModal.js"></script>
+    <script src="Steps/Step1.js"></script>
+    <script src="Steps/Step2.js"></script>
+
     <style>
       body {
         background-color: #021011;
@@ -13,11 +16,8 @@
 </head>
 <body>
     <script>
-      const workflowModal = new WorkflowModal();
+      const workflowModal = new WorkflowModal(new LoginStep());
       document.body.appendChild(workflowModal);
-      
-      const workflowModal2 = new WorkflowModal();
-      document.body.appendChild(workflowModal2);
     </script>
 </body>
 </html>
