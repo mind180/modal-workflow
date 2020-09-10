@@ -2,7 +2,7 @@ class LoginStep extends HTMLElement {
 
   constructor(modal) {
     super();
-    this._modal = modal;
+    this.modal = modal;
     this.shadow = this.attachShadow({mode: 'open'});
   }
 
@@ -15,7 +15,7 @@ class LoginStep extends HTMLElement {
   }
 
   setModal(modal) {
-    this._modal= modal;
+    this.modal= modal;
   }
 
   layout() {
@@ -40,7 +40,7 @@ class LoginStep extends HTMLElement {
     const password = this.shadow.getElementById('password');
     alert(login.value + ' ' + password.value);
     
-    this._modal.changeStep(new UserInfoStep(this));
+    this.modal.changeStep(new UserInfoStep(this));
   }
 
   back() {

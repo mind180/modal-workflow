@@ -2,7 +2,7 @@ class UserInfoStep extends HTMLElement {
 
   constructor(modal) {
     super();
-    this._modal = modal;
+    this.modal = modal;
     this.shadow = this.attachShadow({mode: 'open'});
   }
 
@@ -20,7 +20,7 @@ class UserInfoStep extends HTMLElement {
   }
 
   setModal(modal) {
-    this._modal= modal;
+    this.modal= modal;
   }
 
   layout() {
@@ -48,7 +48,7 @@ class UserInfoStep extends HTMLElement {
   }
 
   back() {
-    this._modal.changeStep(new LoginStep(this));
+    this.modal.changeStep(new LoginStep(this));
   }
 }
 
