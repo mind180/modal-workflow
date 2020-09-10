@@ -1,5 +1,4 @@
-class LoginStep extends HTMLElement {
-
+export class LoginStep extends HTMLElement {
   constructor(modal) {
     super();
     this.modal = modal;

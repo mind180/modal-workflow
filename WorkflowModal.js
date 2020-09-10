@@ -1,4 +1,4 @@
-class WorkflowModal extends HTMLElement {
+export class WorkflowModal extends HTMLElement {
   constructor(initialStep) {
     super();
     this.step = initialStep;

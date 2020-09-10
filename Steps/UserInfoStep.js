@@ -1,5 +1,4 @@
-class UserInfoStep extends HTMLElement {
-
+export class UserInfoStep extends HTMLElement {
   constructor(modal) {
     super();
     this.modal = modal;
@@ -13,10 +12,6 @@ class UserInfoStep extends HTMLElement {
 
   render() {
 
-  }
-
-  getHTMLTagName() {
-    return '<login-></login-step>';
   }
 
   setModal(modal) {
