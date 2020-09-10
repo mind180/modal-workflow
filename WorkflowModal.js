@@ -37,6 +37,7 @@ export class WorkflowModal extends HTMLElement {
 
   back() {
     this.step.back();
+    this.renderStep();
   }
 
   changeStep(step) {

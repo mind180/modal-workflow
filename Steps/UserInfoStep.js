@@ -1,3 +1,5 @@
+import {LoginStep} from "/Steps/LoginStep.js";
+
 export class UserInfoStep extends HTMLElement {
   constructor(modal) {
     super();
@@ -27,6 +29,7 @@ export class UserInfoStep extends HTMLElement {
   
     const template = `
         <div id='content'>
+          <div>USER INFO</div>
           <input id='firstName' type='text'>
           <input id='lastName' type='text'>
           <input id='age' type='number'>
@@ -39,11 +42,10 @@ export class UserInfoStep extends HTMLElement {
   next() {
     const fn = this.shadow.getElementById('firstName');
     const ln = this.shadow.getElementById('lastName');
-    alert(fn.value + ' ' + ln.value);
   }
 
   back() {
-    this.modal.changeStep(new LoginStep(this));
+    this.modal.changeStep(new LoginStep(this.modal));
   }
 }
 
