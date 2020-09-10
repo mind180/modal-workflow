@@ -3,7 +3,6 @@ class LoginStep extends HTMLElement {
   constructor(modal) {
     super();
     this._modal = modal;
-  
     this.shadow = this.attachShadow({mode: 'open'});
   }
 
