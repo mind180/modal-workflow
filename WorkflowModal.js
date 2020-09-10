@@ -1,9 +1,9 @@
 class WorkflowModal extends HTMLElement {
   constructor(initialStep) {
     super();
+    this.step = initialStep;
     this.step.setModal(this);
     this.shadow = this.attachShadow({mode: 'open'});
-    this.step = initialStep;
   }
 
   connectedCallback() {
