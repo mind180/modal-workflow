@@ -25,25 +25,21 @@ class UserInfoStep extends HTMLElement {
   }
 
   layout() {
-    function style() {
-      return `
+    const style = `
         <style>
   
         </style>
       `;
-    }
   
-    function template() {
-      return `
+    const template = `
         <div id='content'>
           <input id='firstName' type='text'>
           <input id='lastName' type='text'>
           <input id='age' type='number'>
         </div>
       `;
-    }
 
-    return style() + template();
+    return style + template;
   }
 
   next() {

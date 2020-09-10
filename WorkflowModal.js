@@ -45,9 +45,7 @@ class WorkflowModal extends HTMLElement {
   }
 
   layout() {
-    //present as variable
-    function style() {
-      return `
+    const style = `
         <style>
           .container {
             width: 500px;
@@ -83,10 +81,8 @@ class WorkflowModal extends HTMLElement {
           }
         </style>
       `;
-    }
   
-    function template() {
-      return `
+    const template = `
         <div class='container'>
           <header>
             header
@@ -101,9 +97,8 @@ class WorkflowModal extends HTMLElement {
           </footer>
         <div>
       `;
-    }
 
-    return style() + template();
+    return style + template;
   }
 }
 

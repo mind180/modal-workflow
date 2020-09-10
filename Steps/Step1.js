@@ -20,24 +20,20 @@ class LoginStep extends HTMLElement {
   }
 
   layout() {
-    function style() {
-      return `
+    const style = `
         <style>
   
         </style>
       `;
-    }
   
-    function template() {
-      return `
+    const template = `
         <div id='content'>
           <input id='login' type='text'>
           <input id='password' type='password'>
         </div>
       `;
-    }
 
-    return style() + template();
+    return style + template;
   }
 
   next() {
