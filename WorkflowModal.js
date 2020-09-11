@@ -48,14 +48,22 @@ export class WorkflowModal extends HTMLElement {
     const style = `
         <style>
           .container {
+            font-family: sans-serif;
             width: 500px;
             border: 1px solid #63a3a3;
+            margin: 10px auto;
           }
   
           header {
             background-color: #083e3e;
             color: white;
-            padding: 10px 20px;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+          }
+
+          #closeModal {
+            cursor: pointer;
           }
   
           #body {
@@ -69,7 +77,7 @@ export class WorkflowModal extends HTMLElement {
             background-color: #083e3e;
             display: flex;
             justify-content: flex-end;
-            padding: 10px;
+            padding: 1rem;
           }
   
           .btn {
@@ -85,7 +93,8 @@ export class WorkflowModal extends HTMLElement {
     const template = `
         <div class='container'>
           <header>
-            header
+            <div>Header</div>
+            <div id='closeModal'>×</div>
           </header>
           <div id='body'>
           </div>
