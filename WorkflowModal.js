@@ -44,6 +44,11 @@ export class WorkflowModal extends HTMLElement {
     this.step = step;
   }
 
+  close() {
+    const modal = this.shadow.getElementById('modal');
+    modal.classList.add('vanish');
+  }
+
   layout() {
     const style = `
         <style>
@@ -55,6 +60,10 @@ export class WorkflowModal extends HTMLElement {
             margin: 30px auto;
             position: relative;
             animation: appearance .3s ease-in-out;
+          }
+
+          .vanish {
+            animation: vanish .3s ease-in-out;
           }
   
           header {
@@ -103,11 +112,22 @@ export class WorkflowModal extends HTMLElement {
               opacity: 1;
             }
           }
+
+          @keyframes vanish {
+            from { 
+              top: 0;
+              opacity: 1;
+            }
+            to {
+              top: -300px;
+              opacity: 0;
+            }
+          }
         </style>
       `;
   
     const template = `
-        <div class='container'>
+        <div id='modal' class='container'>
           <header>
             <div>Header</div>
             <div id='closeModal'>×</div>
