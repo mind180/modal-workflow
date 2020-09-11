@@ -14,9 +14,11 @@ export class WorkflowModal extends HTMLElement {
   initHandlers() {
     const btnNext = this.shadow.getElementById('btnNext');
     const btnBack = this.shadow.getElementById('btnBack');
+    const closeModal = this.shadow.getElementById('closeModal');
 
     btnNext.addEventListener('click', this.next.bind(this));
     btnBack.addEventListener('click', this.back.bind(this));
+    closeModal.addEventListener('click', this.close.bind(this));    
   }
 
   render() {
@@ -45,8 +47,8 @@ export class WorkflowModal extends HTMLElement {
   }
 
   close() {
-    const modal = this.shadow.getElementById('modal');
-    modal.classList.add('vanish');
+    //TODO create animation
+    this.remove();
   }
 
   layout() {
@@ -77,6 +79,10 @@ export class WorkflowModal extends HTMLElement {
 
           #closeModal {
             cursor: pointer;
+          }
+
+          #closeModal:hover {
+            font-weight: bold;
           }
   
           #body {
