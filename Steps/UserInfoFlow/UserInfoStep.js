@@ -1,5 +1,5 @@
-import { UserContacts } from "/Steps/UserContacts.js";
-import {LoginStep} from "/Steps/LoginStep.js";
+import { UserContacts } from "./UserContacts.js";
+import {LoginStep} from "./LoginStep.js";
 
 export class UserInfoStep extends HTMLElement {
   constructor(modal) {

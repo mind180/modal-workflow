@@ -1,6 +1,6 @@
-import {UserInfoStep} from "/Steps/UserInfoStep.js";
+import {UserInfoStep} from "./UserInfoStep.js";
 
-export class LoginStep extends HTMLElement {
+export class UserContacts extends HTMLElement {
   constructor(modal) {
     super();
     this.modal = modal;
@@ -31,11 +31,12 @@ export class LoginStep extends HTMLElement {
   
     const template = `
         <div id='content'>
-          <div>Login step:</div>
+          <div>User contacts:</div>
           <div id='fields'>
-            <input id='login' type='text' placeholder='login'>
-            <input id='password' type='password' placeholder='password'>
-          <div>
+            <input id='email' type='email' placeholder='email'>
+            <input id='phone' type='tel' placeholder='phone'>
+            <input id='site' type='url' placeholder='site'>
+          </div>
         </div>
       `;
 
@@ -43,14 +44,14 @@ export class LoginStep extends HTMLElement {
   }
 
   next() {
-    const login = this.shadow.getElementById('login');
-    const password = this.shadow.getElementById('password');
-    
-    this.modal.changeStep(new UserInfoStep(this.modal));
+    const email = this.shadow.getElementById('email');
+    const phone = this.shadow.getElementById('phone');
+    const site = this.shadow.getElementById('site');
   }
 
   back() {
+    this.modal.changeStep(new UserInfoStep(this.modal));
   }
 }
 
-customElements.define('login-step', LoginStep);
+customElements.define('user-contacts', UserContacts);
