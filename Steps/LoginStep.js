@@ -42,8 +42,6 @@ export class LoginStep extends HTMLElement {
     const password = this.shadow.getElementById('password');
     
     this.modal.changeStep(new UserInfoStep(this.modal));
-    this.modal.close();
-    this.modal.remove();
   }
 
   back() {
