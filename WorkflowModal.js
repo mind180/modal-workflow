@@ -48,28 +48,41 @@ export class WorkflowModal extends HTMLElement {
     const style = `
         <style>
           .container {
-            width: 500px;
+            font-family: sans-serif;
+            max-width: 500px;
             border: 1px solid #63a3a3;
+            border-radius: .3rem;
+            margin: 30px auto;
+            position: relative;
+            animation: appearance .3s ease-in-out;
           }
   
           header {
             background-color: #083e3e;
+            border-radius: .3rem .3rem 0 0;
             color: white;
-            padding: 10px 20px;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+          }
+
+          #closeModal {
+            cursor: pointer;
           }
   
           #body {
             height: 200px;
             background-color: #162522;
             color: cadetblue;
-            padding: 10px 20px;
+            padding: 1rem;
           }
   
           footer {
             background-color: #083e3e;
+            border-radius: 0 0 .3rem .3rem;
             display: flex;
             justify-content: flex-end;
-            padding: 10px;
+            padding: 1rem;
           }
   
           .btn {
@@ -79,13 +92,25 @@ export class WorkflowModal extends HTMLElement {
             cursor: pointer;
             padding: 10px 20px;
           }
+
+          @keyframes appearance {
+            from { 
+              top: -300px;
+              opacity: 0;
+            }
+            to {
+              top: 0;
+              opacity: 1;
+            }
+          }
         </style>
       `;
   
     const template = `
         <div class='container'>
           <header>
-            header
+            <div>Header</div>
+            <div id='closeModal'>×</div>
           </header>
           <div id='body'>
           </div>

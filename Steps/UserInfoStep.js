@@ -9,11 +9,10 @@ export class UserInfoStep extends HTMLElement {
 
   connectedCallback() {
     this.render();
-    this.shadow.innerHTML = this.layout();
   }
 
   render() {
-
+    this.shadow.innerHTML = this.layout();
   }
 
   setModal(modal) {
