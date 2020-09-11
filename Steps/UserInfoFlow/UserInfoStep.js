@@ -1,25 +1,8 @@
+import {Step} from "../Step.js";
 import { UserContacts } from "./UserContacts.js";
 import {LoginStep} from "./LoginStep.js";
 
-export class UserInfoStep extends HTMLElement {
-  constructor(modal) {
-    super();
-    this.modal = modal;
-    this.shadow = this.attachShadow({mode: 'open'});
-  }
-
-  connectedCallback() {
-    this.render();
-  }
-
-  render() {
-    this.shadow.innerHTML = this.layout();
-  }
-
-  setModal(modal) {
-    this.modal= modal;
-  }
-
+export class UserInfoStep extends Step {
   layout() {
     const style = `
         <style>
