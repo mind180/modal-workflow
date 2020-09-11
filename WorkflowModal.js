@@ -52,7 +52,9 @@ export class WorkflowModal extends HTMLElement {
             max-width: 500px;
             border: 1px solid #63a3a3;
             border-radius: .3rem;
-            margin: 10px auto;
+            margin: 30px auto;
+            position: relative;
+            animation: appearance .3s ease-in-out;
           }
   
           header {
@@ -89,6 +91,17 @@ export class WorkflowModal extends HTMLElement {
             color: white;
             cursor: pointer;
             padding: 10px 20px;
+          }
+
+          @keyframes appearance {
+            from { 
+              top: -300px;
+              opacity: 0;
+            }
+            to {
+              top: 0;
+              opacity: 1;
+            }
           }
         </style>
       `;
