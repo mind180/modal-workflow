@@ -13,6 +13,10 @@ export class Step extends HTMLElement {
     this.shadow.innerHTML = this.layout();
   }
 
+  setModal(modal) {
+    this.modal= modal;
+  }
+
   layout() {
     const style = `
         <style>
