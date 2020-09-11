@@ -49,13 +49,15 @@ export class WorkflowModal extends HTMLElement {
         <style>
           .container {
             font-family: sans-serif;
-            width: 500px;
+            max-width: 500px;
             border: 1px solid #63a3a3;
+            border-radius: .3rem;
             margin: 10px auto;
           }
   
           header {
             background-color: #083e3e;
+            border-radius: .3rem .3rem 0 0;
             color: white;
             padding: 1rem;
             display: flex;
@@ -70,11 +72,12 @@ export class WorkflowModal extends HTMLElement {
             height: 200px;
             background-color: #162522;
             color: cadetblue;
-            padding: 10px 20px;
+            padding: 1rem;
           }
   
           footer {
             background-color: #083e3e;
+            border-radius: 0 0 .3rem .3rem;
             display: flex;
             justify-content: flex-end;
             padding: 1rem;
