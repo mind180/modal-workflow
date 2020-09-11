@@ -22,15 +22,20 @@ export class LoginStep extends HTMLElement {
   layout() {
     const style = `
         <style>
-  
+          #fields {
+            display: flex;
+            flex-direction: column;
+          }
         </style>
       `;
   
     const template = `
         <div id='content'>
-          <div>LOGIN STEP</div>
-          <input id='login' type='text'>
-          <input id='password' type='password'>
+          <div>Login step:</div>
+          <div id='fields'>
+            <input id='login' type='text' placeholder='login'>
+            <input id='password' type='password' placeholder='password'>
+          <div>
         </div>
       `;
 

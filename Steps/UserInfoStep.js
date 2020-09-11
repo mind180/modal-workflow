@@ -1,3 +1,4 @@
+import { UserContacts } from "/Steps/UserContacts.js";
 import {LoginStep} from "/Steps/LoginStep.js";
 
 export class UserInfoStep extends HTMLElement {
@@ -22,16 +23,21 @@ export class UserInfoStep extends HTMLElement {
   layout() {
     const style = `
         <style>
-  
+          #fields {
+            display: flex;
+            flex-direction: column;
+          }
         </style>
       `;
   
     const template = `
         <div id='content'>
-          <div>USER INFO</div>
-          <input id='firstName' type='text'>
-          <input id='lastName' type='text'>
-          <input id='age' type='number'>
+          <div>User info:</div>
+          <div id='fields'>
+            <input id='firstName' type='text' placeholder='first name'>
+            <input id='lastName' type='text' placeholder='last name'>
+            <input id='age' type='number' placeholder='age'>
+          </div>
         </div>
       `;
 
@@ -41,6 +47,7 @@ export class UserInfoStep extends HTMLElement {
   next() {
     const fn = this.shadow.getElementById('firstName');
     const ln = this.shadow.getElementById('lastName');
+    this.modal.changeStep(new UserContacts(this.modal));
   }
 
   back() {
