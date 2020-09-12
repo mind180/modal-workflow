@@ -25,9 +25,13 @@ export class LoginStep extends Step {
     return style + template;
   }
 
-  next() {
-    const login = this.shadow.getElementById('login');
-    const password = this.shadow.getElementById('password');
+   async next() {
+    //TODO implement ID concept for new steps
+    this.modal.showLoading();
+
+    const res = await new Promise((resolve, reject) => {
+      setTimeout(() => resolve("готово!"), 200000);
+    })
     
     this.modal.changeStep(new UserInfoStep(this.modal));
   }

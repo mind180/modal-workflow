@@ -1,8 +1,9 @@
 export class WorkflowModal extends HTMLElement {
-  constructor(initialStep) {
+  constructor(initialStep, loadingEffect) {
     super();
     this.step = initialStep;
     this.step.setModal(this);
+    this.loadingEffect = loadingEffect;
     this.shadow = this.attachShadow({mode: 'open'});
   }
 
@@ -32,8 +33,8 @@ export class WorkflowModal extends HTMLElement {
     modalBody.appendChild(this.step);
   }
 
-  next() {
-    this.step.next();
+  async next() {
+    await this.step.next();
     this.renderStep();
   }
 
@@ -49,6 +50,15 @@ export class WorkflowModal extends HTMLElement {
   close() {
     //TODO create animation
     this.remove();
+  }
+
+  showLoading() {
+    const body = this.shadow.getElementById('body');
+    body.appendChild(this.loadingEffect);
+  }
+
+  hideLoading() {
+
   }
 
   layout() {
@@ -90,6 +100,7 @@ export class WorkflowModal extends HTMLElement {
             background-color: #162522;
             color: cadetblue;
             padding: 1rem;
+            position: relative;
           }
   
           footer {
