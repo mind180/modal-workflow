@@ -13,7 +13,6 @@ export class LoadingBars extends HTMLElement {
   }
 
   layout() {
-    //TODO move to separate component
     const style = `
       <style>
         .overlay {
