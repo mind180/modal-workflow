@@ -30,7 +30,7 @@ export class LoginStep extends Step {
     this.modal.showLoading();
 
     const res = await new Promise((resolve, reject) => {
-      setTimeout(() => resolve("готово!"), 200000);
+      setTimeout(() => resolve("готово!"), 2000);
     })
     
     this.modal.changeStep(new UserInfoStep(this.modal));
