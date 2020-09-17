@@ -1,6 +1,6 @@
-import {WorkflowModal} from "/WorkflowModal.js";
-import {LoginStep} from "/Steps/UserInfoFlow/LoginStep.js";
-import {LoadingBars} from "/Effects/LoadingBars.js";
+import {WorkflowModal} from "/WorkflowModal/WorkflowModal.js";
+import {LoadingBars} from "/WorkflowModal/WorkflowModalEffects/LoadingBars.js";
+import {LoginStage} from "/WorkflowModal/Flows/UserInfoFlow/LoginStage.js";
 
 function initHandlers() {
   const workflowButton = document.getElementById('workflowButton');
@@ -9,8 +9,8 @@ function initHandlers() {
 
 
 function openWorkflowHandler(event) {
-  const initialLoginStep = new LoginStep();
-  const workflowModal = new WorkflowModal(initialLoginStep, new LoadingBars());
+  const initialLoginStage = new LoginStage();
+  const workflowModal = new WorkflowModal(initialLoginStage, new LoadingBars());
   document.body.appendChild(workflowModal);
 }
 

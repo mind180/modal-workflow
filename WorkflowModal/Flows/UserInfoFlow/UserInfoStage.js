@@ -1,8 +1,8 @@
-import {Step} from "../Step.js";
-import { UserContacts } from "./UserContacts.js";
-import {LoginStep} from "./LoginStep.js";
+import {Stage} from "../Stage.js";
+import {UserContactsStage} from "./UserContactsStage.js";
+import {LoginStage} from "./LoginStage.js";
 
-export class UserInfoStep extends Step {
+export class UserInfoStage extends Stage {
   layout() {
     const style = `
         <style>
@@ -30,12 +30,12 @@ export class UserInfoStep extends Step {
   next() {
     const fn = this.shadow.getElementById('firstName');
     const ln = this.shadow.getElementById('lastName');
-    this.modal.changeStep(new UserContacts(this.modal));
+    this.modal.changeStep(new UserContactsStage(this.modal));
   }
 
   back() {
-    this.modal.changeStep(new LoginStep(this.modal));
+    this.modal.changeStep(new LoginStage(this.modal));
   }
 }
 
-customElements.define('user-info-step', UserInfoStep);
+customElements.define('user-info-step', UserInfoStage);

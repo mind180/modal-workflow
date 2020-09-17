@@ -1,7 +1,7 @@
-import {Step} from "../Step.js";
-import {UserInfoStep} from "./UserInfoStep.js";
+import {Stage} from "../Stage.js";
+import {UserInfoStage} from "./UserInfoStage.js";
 
-export class UserContacts extends Step {
+export class UserContactsStage extends Stage {
   layout() {
     const style = `
         <style>
@@ -33,8 +33,8 @@ export class UserContacts extends Step {
   }
 
   back() {
-    this.modal.changeStep(new UserInfoStep(this.modal));
+    this.modal.changeStep(new UserInfoStage(this.modal));
   }
 }
 
-customElements.define('user-contacts', UserContacts);
+customElements.define('user-contacts', UserContactsStage);

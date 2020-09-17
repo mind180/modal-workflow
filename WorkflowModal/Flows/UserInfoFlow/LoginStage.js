@@ -1,22 +1,7 @@
-export class Step extends HTMLElement {
-  constructor(_modal) {
-    super();
-    this.modal = _modal;
-    this.shadow = this.attachShadow({mode: 'open'});
-  }
+import {Stage} from "../Stage.js";
+import {UserInfoStage} from "./UserInfoStage.js";
 
-  connectedCallback() {
-    this.render();
-  }
-
-  render() {
-    this.shadow.innerHTML = this.layout();
-  }
-
-  setModal(modal) {
-    this.modal= modal;
-  }
-
+export class LoginStage extends Stage {
   layout() {
     const style = `
         <style>
@@ -40,13 +25,19 @@ export class Step extends HTMLElement {
     return style + template;
   }
 
-  next() {
-    console.log("Method has not been implemented");
+   async next() {
+    //TODO implement ID concept for new steps
+    this.modal.showLoading();
+
+    const res = await new Promise((resolve, reject) => {
+      setTimeout(() => resolve("готово!"), 2000);
+    })
+    
+    this.modal.changeStep(new UserInfoStage(this.modal));
   }
 
   back() {
-    console.log("Method has not been implemented");
   }
 }
 
-customElements.define('empty-step', Step);
+customElements.define('login-step', LoginStage);
